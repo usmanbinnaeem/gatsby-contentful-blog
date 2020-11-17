@@ -1,0 +1,23 @@
+.containerr {
+display: flex;
+}
+.bio {
+    align-items: center;
+    justify-content: center;
+    margin-top: 70%;
+    padding: 5%;
+    margin-left: 35%;
+}
+ul {
+    text-decoration: none;
+    list-style: none;
+
+}
+
+.image {
+    border-radius: 20%;
+}
+
+a {
+    text-decoration: none;
+}
