@@ -1,8 +1,10 @@
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import Button from "@material-ui/core/Button"
 import firebase from "gatsby-plugin-firebase"
+import { useSelector } from "react-redux"
+import { store, setLoggedIn } from "../../redux/store"
 
 const NavItem = styled(Link)`
   text-decoration: none;
@@ -40,7 +42,8 @@ const NavItem = styled(Link)`
   }
 `
 const NavbarLinks = () => {
-  const [loggedIn, setLoggedIn] = useState(false)
+  // const [loggedIn, setLoggedIn] = useState(false)
+  const loggedIn = useSelector((state) => state.login)
 
   const Login = async () => {
     var provider = new firebase.auth.GoogleAuthProvider()
@@ -52,7 +55,8 @@ const NavbarLinks = () => {
         var errorMessage = error.message
         return errorMessage
       })
-    setLoggedIn(true)
+    // setLoggedIn(true)
+    store.dispatch(setLoggedIn(true))
   }
 
   const Logout = async () => {
@@ -70,7 +74,8 @@ const NavbarLinks = () => {
         var errorMessage = error.message
         return errorMessage
       })
-    setLoggedIn(false)
+    // setLoggedIn(false)
+    store.dispatch(setLoggedIn(false))
   }
 
   return (

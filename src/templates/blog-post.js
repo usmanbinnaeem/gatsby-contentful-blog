@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { Link, graphql } from "gatsby"
 import firebase from "gatsby-plugin-firebase"
 import Bio from "../components/bio"
@@ -8,9 +8,12 @@ import Box from "@material-ui/core/Box"
 import Grid from "@material-ui/core/Grid"
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos"
 import Button from "@material-ui/core/Button"
+import { useSelector } from "react-redux"
+import { store, setLoggedIn } from "../redux/store"
 
 const BlogPostTemplate = ({ data, location }) => {
-  const [loggedIn, setLoggedIn] = useState(false)
+  // const [loggedIn, setLoggedIn] = useState(false)
+  const loggedIn = useSelector(state => state.login)
 
   const Login = async () => {
     var provider = new firebase.auth.GoogleAuthProvider()
@@ -22,7 +25,8 @@ const BlogPostTemplate = ({ data, location }) => {
         var errorMessage = error.message
         return errorMessage
       })
-    setLoggedIn(true)
+    // setLoggedIn(true)
+    store.dispatch(setLoggedIn(true))
   }
 
   const post = data.contentfulBlogPost

@@ -7,7 +7,6 @@
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
-  
   "dependencies": {
     "@contentful/gatsby-transformer-contentful-richtext": "^13.1.0",
     "@contentful/rich-text-react-renderer": "^14.1.2",
@@ -41,11 +40,12 @@
     "gatsby-source-filesystem": "^2.4.2",
     "gatsby-transformer-remark": "^2.9.2",
     "gatsby-transformer-sharp": "^2.6.0",
+    "npm-upgrade": "^2.0.4",
     "prismjs": "^1.22.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-helmet": "^5.2.1",
-    "react-redux": "^7.2.2",
+    "react-redux": "^7.1.0-rc.1",
     "reactstrap": "^8.7.1",
     "redux": "^4.0.5",
     "styled-components": "^5.2.1",

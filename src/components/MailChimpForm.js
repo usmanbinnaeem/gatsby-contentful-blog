@@ -47,6 +47,7 @@ export default class MailChimpForm extends React.Component {
               variant="outlined"
               onChange={this.handleChange}
               className={styles.text}
+              style={{ margin: "16px" }}
             />
           </div>
 
@@ -57,14 +58,14 @@ export default class MailChimpForm extends React.Component {
             label="Submit"
             type="submit"
             className={styles.button}
-            style={{ margin: "24px", padding: "16px" }}
+            style={{ margin: "16px", padding: "16px" }}
           >
             <Typography variant="button">Subscribe</Typography>
           </Button>
         </form>
       </div>
     ) : this.state.result === "error" ? (
-      <div>You have already subscribed </div>
+      <div style={{ color: "red" }}>Error</div>
     ) : (
       <>
         <h3>Join the Newsletter</h3>
@@ -84,6 +85,7 @@ export default class MailChimpForm extends React.Component {
             variant="outlined"
             onChange={this.handleChange}
             className={styles.text}
+            style={{ margin: "16px" }}
           />
           <br />
           <Button
@@ -92,6 +94,7 @@ export default class MailChimpForm extends React.Component {
             label="Submit"
             type="submit"
             className={styles.button}
+            style={{ margin: "16px", padding: "16px" }}
           >
             <Typography variant="button">Subscribe</Typography>
           </Button>

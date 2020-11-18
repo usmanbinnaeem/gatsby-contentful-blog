@@ -21,7 +21,6 @@ const SEO = ({ description, meta, lang, title }) => {
   )
 
   const metaDescription = description
-  const defaultTitle = site.siteMetadata?.title
 
   return (
     <Helmet
